@@ -1,9 +1,9 @@
 # 42-Piscine-PHP
 Ecole 42 - Piscine PHP / Mysql / Html / Css / Javascript
 
--D00 almost done 90% <---- HTML & CSS
--D01 0%
--D02 0%
+- D00 almost done 90% <---- HTML & CSS
+- D01 0%
+- D02 0%
 -D03 0%
 -D04 0%
 -D05 0%
