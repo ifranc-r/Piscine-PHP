@@ -1,0 +1,151 @@
+body{
+	background-color: #505050;
+	margin: 18px 0px 10px 260px;
+
+}
+
+.page{
+	margin: 0 auto;
+	width: 1420px;
+}
+header {
+    height: 137px;
+    width: 1420px;
+    position: relative;
+}
+
+header, .action, .scene, .action2, .description{
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #000000;
+    background-color: #909090;
+}
+
+header img.title{
+	margin: 10px 10px 30px 10px;
+	height: 110px
+}
+
+header img.loupe{
+	margin-right: 10px;
+	position: absolute;
+	top : 10px;
+	right: 20px;
+}
+
+header img.reload{
+	height: 20px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+header img.close{
+	height: 20px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+
+.action, .action2{
+	width: 108px;
+	height: 410px;
+	float: left;
+	margin: 20px 0 0 30px;
+	padding: 15px 0 0 32px;
+}
+
+.action img, .action2 img {
+    width: 70px;
+    margin-bottom: 6px;
+}
+
+.action img.selected {
+    border: 5px solid red;
+    border-radius: 7px;
+    margin : -8px 0 -8px 0;
+}
+
+.scene{
+	float: left;
+	margin: 20px 0 0 30px;
+}
+
+.scene img{
+	margin: 10px;
+}
+
+.wall{
+	content: '';
+	width: 120px;
+    height: 70px;
+	background-image: url('resources/brick.jpg');
+	margin: -5px 0 0 -22px;
+}
+.description{
+	bottom: 450px;
+	right: 275px;
+    height: 105px;
+    width: 640px;
+    position:absolute;
+}
+.description p{
+	font-family: arial;
+    font-size: 20px;
+}
+
+.chaise:hover ~ .description{
+	font-family: Time;
+	background-color: pink;
+	content: "Chaise";
+}
+
+
+.form{
+	position: absolute;
+	width: 500px;
+    height: 150px;
+    bottom: 500px;
+    left: 220px;
+	background-color: #88ff89;
+	clear: both;
+	border-radius: 10px;
+    box-shadow: 10px 10px 10px #000000;
+    padding: 10px;
+    font-family: arial;
+    font-size: 16px;
+    font-stretch: expanded !important;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.form span.big {
+    font-family: Times;
+    font-size: 31px;
+}
+
+.form span.shadow {
+    text-shadow: 5px 5px 5px #ff0000;
+}
+
+.form span.italic {
+    font-style: italic;
+}
+
+.form form input[type="text"]{
+	margin-left: 3px;
+	margin-top: 3px;
+	width: 370px;
+	border: 2px inset white;
+}
+
+.form form input[type="submit"]{
+	background-color: #e7e7e7;;
+	margin-left: 3px;
+	padding: 3px 14px;
+	border: 1px groove white;
+	font-family: arial;
+    font-size: 12px;
+    font-stretch: expanded !important;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
