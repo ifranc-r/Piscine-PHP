@@ -9,5 +9,6 @@ if ($argc > 1){
 	$fusion_array_rev = array_reverse($fusion_array);
 	$str = implode (" ", $fusion_array_rev);
 	echo "$str\n";
+	
 }
 ?>
