@@ -83,10 +83,10 @@ header img.close{
 }
 
 .form{
-	position: absolute;
+	position: fixed;
 	width: 500px;
     height: 150px;
-    bottom: 500px;
+    top: 700px;
     left: 220px;
 	background-color: #88ff89;
 	clear: both;

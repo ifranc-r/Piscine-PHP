@@ -57,6 +57,7 @@ header img.close{
 .action img, .action2 img {
     width: 70px;
     margin-bottom: 6px;
+    cursor: pointer;
 }
 
 .action img.selected {
@@ -68,7 +69,7 @@ header img.close{
 .scene{
 	float: left;
 	margin: 20px 0 0 30px;
-}
+ }
 
 .scene img{
 	margin: 10px;
@@ -81,30 +82,29 @@ header img.close{
 	background-image: url('resources/brick.jpg');
 	margin: -5px 0 0 -22px;
 }
+
 .description{
-	bottom: 450px;
-	right: 275px;
+	top: 800px;
+	left: 1005px;
     height: 105px;
     width: 640px;
-    position:absolute;
-}
-.description p{
-	font-family: arial;
-    font-size: 20px;
+	position: fixed;
 }
 
-.chaise:hover ~ .description{
-	font-family: Time;
-	background-color: pink;
-	content: "Chaise";
+.description p{
+	display: scroll;
+	font-family: arial;
+    font-size: 20px;
+    text-align: center;
 }
 
 
 .form{
-	position: absolute;
+	display: visible;
+	position: fixed;
 	width: 500px;
     height: 150px;
-    bottom: 500px;
+    top: 700px;
     left: 220px;
 	background-color: #88ff89;
 	clear: both;

@@ -10,7 +10,6 @@
 		print_r(ft_split($line));
 		echo "\n";
 	}
-
 	fclose( $f );
 	echo "\n";
 ?>

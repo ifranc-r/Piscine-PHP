@@ -1,58 +1,91 @@
-
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  font-family: Arial;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.navbar a {
-  float: left; 
-  font-size: 16px;
-  color: white;
-  /*text-align: center;*/
-  padding: 14px 18px;
-  text-decoration: none;
+body {
+	height: 1200px;
+	font-size: 18px;
+	font-family: sans-serif;
+	color: #5D6063;
+}
+
+a{
+	color: #5D6063;
+	text-decoration: none;
+	text-align: center;
+}
+
+
+.header {
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+
+	width: 100%;
+	padding: 20px;
+	background: #D6E9FE;
+}
+
+.menu {
+	margin: 5px
+}
+
+.menu > li {
+  /* passer les liste de block a ligne*/
+	display: inline;
+	margin-right: 50px;
+}
+
+.menu > li:last-of-type {
+	margin-right:0;
 }
 
 .dropdown {
-  float: left;
-  overflow: hidden;
+  /*permet a .features-menu de se positioner*/
+	position: relative;
+}
+.dropdown > span{
+  /*placer le span en avant de .features*/
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
 }
 
-.dropdown .dropbtn {
-  font-size: 16px; 
-  border: none;
-  outline: none;
-  color: white;
+.dropdown:hover .features-menu{
+  /* changer la direction d'affichage de display */
+	display: flex; 
+	flex-direction: column;
+	background: #B2D6FF;
+	border-radius: 5px;
+	padding-top: 60px;
 
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
+  /* posionte relative au parent (dropdown)*/
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	z-index: 1;
+
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+
+.features-menu {
+	display: none;
 }
 
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  /*text-decoration: none;*/
-  display: block;
-  text-align: left;
+.features-menu li{
+	list-style-position: outside;
+	list-style-type: none;
+	list-style: none;
+	border-bottom: 2px solid #FFF;
+	padding: 10px 40px 10px 50px;
+	width: 100%;
+}
+.features-menu li:hover {
+	background-color: #D6E9FE;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-.navbar a:hover, .dropdown:hover .dropbtn {
-	background-color: red;
+.features-menu li:last-of-type {
+	border-bottom: none;
 }
