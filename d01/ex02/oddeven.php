@@ -7,7 +7,7 @@
 		echo "Entrez un nombre : ";
 		$line = fgets( $f );
 		if ($line){
-			$line = str_replace("\n", "", $line);
+			$line = trim(str_replace("\n", "", $line));
 			if (is_numeric($line)){
 				$num = (int)$line;
 				if ($num % 2 == 0)
