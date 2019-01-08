@@ -1,8 +1,7 @@
 #!/usr/bin/php
 <?php
 include("ft_is_sort.php");
-$tab = array("!/@#;^", "42", "Hello World", "salut", "zZzZzZz");
-$tab[] = "Et qu’est-ce qu’on fait maintenant ?";
+$tab = array("5", "a", "b", "c");
 // sort($tab);
 print_r($tab);
 

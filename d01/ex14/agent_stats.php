@@ -48,6 +48,7 @@ function csv_to_array($f){
 if ($argc == 2){
 	$f = fopen( 'php://stdin', 'r' );
 	$csv = csv_to_array($f);
+	fclose($f);
 	$users =  array();
 	foreach ($csv as $i => $arrayNote)
 	{
@@ -55,8 +56,7 @@ if ($argc == 2){
 		{
 			if ($arrayNote["Noteur"] != "moulinette")
 			{
-				if (array_key_exists($arrayNote["User"], $users))
-				{
+				if (array_key_exists($arrayNote["User"], $users)){
 					$users[$arrayNote["User"]]["notes"][] = $arrayNote["Note"];
 				}
 				else{
