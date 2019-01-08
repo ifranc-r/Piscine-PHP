@@ -3,12 +3,11 @@
 function ft_is_sort($tab){
 	$default = $tab;
 	sort($tab);
-	
-	$flag = true;
+
 	foreach($tab as $key=>$value){
 	    if ($value!= $default[$key])
-	        $flag = false;
+	        return false;
 	}
-	return $flag;
+	return true;
 }
 ?>
