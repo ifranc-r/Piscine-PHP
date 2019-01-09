@@ -1,44 +1,42 @@
 #!/usr/bin/php
 <?php
-function print_array2d($array2d){
-	foreach ($array2d as $array) {
-		foreach ($array as $value){
-			echo $value."\n";
-		}
-	}
+
+function ft_strlen($str)
+{
+	$i = 0;
+	while ($str[$i] || $str[$i]==="0")
+		$i++;
+	return ($i);
 }
 
-function sort_array_2d($array2d){
-	foreach ($array2d as $array){
-		natcasesort($array);
-	}
+function myFilter($var){
+	return ($var !== NULL && $var !== FALSE && $var !== '');
 }
+
+function mySortFunct($a, $b){
+	$MySortChar = "abcdefghijklmnopqrstuvwxyz0123456789 !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+	$sort_len = (ft_strlen($a) < ft_strlen($b))? ft_strlen($a) : ft_strlen($b);
+	for ($i = 0; $i < $sort_len; $i++) {
+		$a_pos_sort = strpos($MySortChar, strtolower($a[$i]));
+		$b_pos_sort = strpos($MySortChar, strtolower($b[$i]));
+		if ($a_pos_sort != $b_pos_sort){
+			return ($a_pos_sort < $b_pos_sort)? -1 : 1;
+		}
+	}
+	return (0);
+}
+
 if ($argc > 1){
 	$fusion_array = array();
 	for($i = 1; $i <= $argc - 1; $i++){
 		$separated_array = explode(' ', $argv[$i]);
 		$trimmed_array = array_map('trim', $separated_array);
-		$split_array = array_filter($trimmed_array);
+		$split_array = array_filter($trimmed_array, "myFilter");
 		$fusion_array = array_merge($fusion_array, $split_array);
 	}
-	$array_number = array();
-	$array_alpha = array();
-	$array_special = array();
+	usort($fusion_array, "mySortFunct");
 	foreach ($fusion_array as $value) {
-		if (is_numeric($value)){
-			$array_number[] = $value;
-			natcasesort($array_number);
-		}
-		elseif (ctype_alpha($value[0])){
-			$array_alpha[] = $value;
-			natcasesort($array_alpha);
-		}
-		else {
-			$array_special[] = $value;
-			natcasesort($array_special);
-		}
+		echo "$value\n";
 	}
-	$array_final_sort = array($array_alpha, $array_number, $array_special);
-	print_array2d($array_final_sort);
 }
 ?>

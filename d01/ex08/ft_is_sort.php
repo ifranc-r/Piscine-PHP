@@ -1,11 +1,10 @@
-#!/usr/bin/php
 <?php
 function ft_is_sort($tab){
 	$default = $tab;
 	sort($tab);
 
 	foreach($tab as $key=>$value){
-	    if ($value!= $default[$key])
+	    if ($value != $default[$key])
 	        return false;
 	}
 	return true;

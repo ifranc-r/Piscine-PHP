@@ -4,7 +4,7 @@
 	
 	while ($f && !feof($f))
 	{
-		echo "Entrez un nombre : ";
+		echo "Entrez un nombre: ";
 		$line = fgets( $f );
 		if ($line){
 			$line = trim(str_replace("\n", "", $line));

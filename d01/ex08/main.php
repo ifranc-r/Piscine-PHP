@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 include("ft_is_sort.php");
-$tab = array("5", "a", "b", "c");
+$tab = array("1" , "2", "3", "a");
 // sort($tab);
 print_r($tab);
 

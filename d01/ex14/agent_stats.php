@@ -1,5 +1,8 @@
 #!/usr/bin/php
 <?php
+function myFilter($var){
+	return ($var !== NULL && $var !== FALSE && $var !== '');
+}
 
 function moyen_all_students($array_students){
 	$number_of_note = 0;
@@ -25,7 +28,7 @@ function ecart_moyen_student_by_student($array_students){
 	}
 }
 
-function csv_to_array($f){
+function csv_to_array($f, $limit){
 	$rows = array();
 	while ($f && !feof($f))
 	{
@@ -37,9 +40,17 @@ function csv_to_array($f){
 	}
 	$first_line = array_shift($rows);
 	$header = explode(";", $first_line);
+	if ($limit !== count($header)){
+		echo "Syntax Error in CSV\n";
+		exit(-1);
+	}
 	$csv = array();
-	foreach($rows as $row) { 
+	foreach($rows as $row) {
 		$separeted_row = explode(";", $row);
+		if ($limit !== count($separeted_row)){
+			echo "Syntax Error in CSV\n";
+			exit(-1);
+		}
 		$csv[] = array_combine($header, $separeted_row);
 	}
 	return $csv;
@@ -47,7 +58,7 @@ function csv_to_array($f){
 
 if ($argc == 2){
 	$f = fopen( 'php://stdin', 'r' );
-	$csv = csv_to_array($f);
+	$csv = csv_to_array($f, 4);
 	fclose($f);
 	$users =  array();
 	foreach ($csv as $i => $arrayNote)

@@ -1,23 +1,22 @@
 #!/usr/bin/php
 <?php
 if ($argc == 4){
-	$operation = array($argv[1], $argv[2], $argv[3]);
-	$operation = array_map('trim', $operation);
-	switch ($operation[1]) {
+	list($n1, $oper, $n2) = array_map('trim', array($argv[1], $argv[2], $argv[3]));
+	switch ($oper) {
 		case '+':
-			echo $operation[0] + $operation[2];
+			echo $n1 + $n2;
 			break;
 		case '-':
-			echo $operation[0] - $operation[2];
+			echo $n1 - $n2;
 			break;
 		case '*':
-			echo $operation[0] * $operation[2];
+			echo $n1 * $n2;
 			break;
 		case '/':
-			echo $operation[0] / $operation[2];
+			echo $n1 / $n2;
 			break;
 		case '%':
-			echo $operation[0] % $operation[2];
+			echo $n1 % $n2;
 			break;
 	}
 	echo "\n";
