@@ -19,6 +19,14 @@ function operation_cal($string){
 	}
 	return (null);
 }
+
+function explode_with_delimter($delimiter, $string){
+	$separate = explode($delimiter, $string);
+	foreach ($separate as $key => $value) {
+
+	}
+}
+
 if ($argc == 2){
 	$cal = operation_cal($argv[1]);
 	if ($cal == null){
@@ -26,6 +34,7 @@ if ($argc == 2){
 		exit(-1);
 	}
 	$operation = explode($cal, $argv[1]);
+	print_r($operation);
 	$operation = array_map("trim", $operation);
 	if (!is_numeric($operation[0]) || !is_numeric($operation[1]) || count($operation) != 2){
 		echo "Syntax Error\n";

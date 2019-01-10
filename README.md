@@ -3,8 +3,8 @@ Ecole 42 - Piscine PHP / Mysql / Html / Css / Javascript
 
 - D00 4/5 done <---- HTML & CSS
 - D01 14/14 done <----  PHP
-- D02 0/6 doing <--- PHP
-- D03 0%
+- D02 3/6 done <--- PHP
+- D03  0/7 doing <--- PHP & Server (MAMP)
 - D04 0%
 - D05 0%
 - D06 0%

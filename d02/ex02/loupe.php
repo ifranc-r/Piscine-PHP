@@ -9,7 +9,6 @@ function callback_hypertext($match){
 }
 
 function callback_in_htext($match){
-	// print_r($match);
 	return ($match[1].strtoupper($match[2]).$match[3]);
 }
 
@@ -24,7 +23,7 @@ if ($argc == 2 && file_exists($argv[1])){
 		$string_file .= fgets($file);
 	}
 	fclose($file);
-	$string_file = preg_replace_callback('/<a.*?>(.*?)(<\/a>)/is', 'callback_hypertext', $string_file);
+	$string_file = preg_replace_callback('/<a.*>(.*?)(<\/a>)/is', 'callback_hypertext', $string_file);
 	echo $string_file;
 }
 ?>
