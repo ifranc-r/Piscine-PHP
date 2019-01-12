@@ -5,7 +5,7 @@ Ecole 42 - Piscine PHP / Mysql / Html / Css / Javascript
 - D01 14/14 done <----  PHP
 - D02 3/6 done <--- PHP
 - D03 7/7 done <--- PHP & Server (php -S)
-- D04 0/4 doing <--- PHP/Server/Network/System administration
+- D04 3/4 doing <--- PHP/Server/Network/System administration (and a cool weebchat boy !!!)
 - D05 0%
 - D06 0%
 - D07 0%
