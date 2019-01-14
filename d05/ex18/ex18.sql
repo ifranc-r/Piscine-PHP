@@ -1,0 +1,5 @@
+SELECT name FROM distrib
+WHERE id_distrib IN (42, 62, 63, 64, 65, 66, 67, 68, 69, 71, 88, 89,90, 99, 100, 444, 324, 80,666,123,133)
+AND name LIKE BINARY "%y%"
+OR name LIKE BINARY "%YY%"
+LIMIT 3, 5;
