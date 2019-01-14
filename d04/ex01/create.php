@@ -22,20 +22,21 @@ function main(){
 				mkdir($file_dir);
 			$usr_array_serial[] = $user_array;
 			file_put_contents($file_usr, serialize($usr_array_serial));
+			echo ("OK\n");
 		}
 		else{
 			$usr_array_serial = unserialize(file_get_contents($file_usr));
 			if (!check_usr_exist($usr_array_serial, $_POST["login"])){
 				$usr_array_serial[] = $user_array;
 				file_put_contents($file_usr, serialize($usr_array_serial));
+				echo ("OK\n");
 			}
 			else
-				die ("ERROR\n");
-			print_r($usr_array_serial);
+				echo ("ERROR\n");
 		}
-		die ("OK\n");
 	}
-	die ("ERROR\n");
+	else
+		echo ("ERROR\n");
 }
 
 main();

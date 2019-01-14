@@ -25,6 +25,7 @@ function main(){
 					$new_password = hash("whirlpool", $_POST["newpw"]);
 					$usr_array_serial[$num_usr]["passwd"] = $new_password;
 					file_put_contents($name_file_usr, serialize($usr_array_serial));
+					header("Location: index.html");
 					echo ("OK\n");
 					exit;
 				}

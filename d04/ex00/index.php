@@ -4,8 +4,8 @@ function ft_is_null($var){
 }
 
 function manage_session(&$login, &$passwd){
+	session_start();
 	if (ft_is_null($_GET["login"]) && ft_is_null($_GET["passwd"]) && $_GET["submit"] === "OK"){
-		session_start();
 		$_SESSION["login"] = $_GET["login"];
 		$_SESSION["passwd"] = $_GET["passwd"];
 	}
@@ -29,5 +29,4 @@ function main(){
 	</body></html>\n");
 }
 main();
-print_r($GLOBALS)
 ?>

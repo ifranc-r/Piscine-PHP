@@ -30,12 +30,13 @@ function main(){
 				file_put_contents($file_usr, serialize($usr_array_serial));
 			}
 			else
-				die ("ERROR\n");
-			print_r($usr_array_serial);
+				echo ("ERROR\n");
 		}
-		die ("OK\n");
+		header("Location: index.html");
+		echo ("OK\n");
 	}
-	die ("ERROR\n");
+	else
+		echo ("ERROR\n");
 }
 
 main();

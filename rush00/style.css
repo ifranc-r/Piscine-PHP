@@ -1,0 +1,379 @@
+/*
+**  body
+*/
+
+body {
+    background-color: white;
+    max-width: 100%;
+    max-height: 100%;
+    }
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+#top_bar {
+  border-radius: 10px;;
+  background: lightskyblue;
+  margin-top:2vw;
+  margin-left:2.5vw;
+  width: 95vw;
+  height: 13.5vh;
+  box-shadow: 1px 2.5px 2.5px black;
+  background-image :url('img/turner.jpg');
+}
+
+#full_body{
+    margin-top:1vw;
+    margin-left:2.5vw;
+}
+#left-col {
+    float:left;
+    border-radius: 10px;;
+    background: lightskyblue;
+    width: 10vw;
+    height: 75vh;
+    box-shadow: 1px 2.5px 2.5px black;
+}
+
+#middle-col {
+    border-radius: 10px;;
+    background: transparent;
+    width: 83vw;
+    margin-left : 12vw;
+    height: 75vh;
+    box-shadow: 1px 2.5px 2.5px black;
+}
+
+
+#right-col {
+    float:right;
+    border-radius: 10px;
+    background: lightskyblue;
+    margin-top: -64vh;
+    margin-right: 12.7vw;
+    width: 5.5vw;
+    height: 45.5vh;
+    box-shadow: 5px 10px 10px #070707;
+}
+
+/*
+**  MENU 
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+      height: 12vh;
+      font-size: 2vh;
+      font-size: 1vw;
+      font-family: sans-serif;
+      color: #5D6063;
+  }
+  
+  a{
+      color: #5D6063;
+      text-decoration: none;
+      text-align: center;
+  }
+  
+  
+  .header {
+      position: fixed;
+      justify-content: space-between;
+      width: 95vw;
+      margin-top:5.1vh;
+      padding: 2vh 1.3vw 2vh 1.3vw;
+      border-radius:5px;
+      background: #D6E9FE;
+  }
+  
+  .menu > li {
+      display: inline;
+      margin-right: 2vw;
+  }
+  
+  .menu > li:last-of-type {
+      margin-right:0;
+  }
+  
+  .dropdown {
+      position: relative;
+  }
+  .dropdown > span{
+      position: relative;
+      z-index: 2;
+      cursor: pointer;
+  }
+  
+  .dropdown:hover .features-menu{
+      display: flex; 
+      flex-direction: column;
+      background: #B2D6FF;
+      border-radius: 5px;
+      padding-top: 4.5vh;
+      position: absolute;
+      top: -1.85vh;
+      left: -2vh;
+      z-index: 1;
+  }
+  
+  .features-menu {
+      display: none;
+      width:8vw;
+  }
+  
+  .features-menu li{
+      list-style-position: outside;
+      list-style-type: none;
+      list-style: none;
+      border-bottom: 2px solid #FFF;
+      padding: 2vh 1.3vw 2vh 1.3vw;
+      width: 100%;
+  }
+  .features-menu li:hover {
+      background-color: #D6E9FE;
+  }
+  
+  .features-menu li:last-of-type {
+      border-bottom: none;
+  }
+
+
+  /*
+  ** FORM STYLE
+  */
+
+  .login-page {
+	width:35vw;
+	height: 35vh;
+	padding: 8% 0 0;
+	margin: auto;
+}
+
+.form {
+	position: absolute;
+	z-index: 1;
+	background: #FFFFFF;
+	max-width: 360px;
+	margin: 0 auto 100px;
+	padding: 45px;
+	text-align: center;
+}
+.form-pict {
+	width:25vw;
+	height: 25vh;
+	padding: 8% 0 0;
+	margin: auto;
+}
+
+.form input {
+	font-family: "Roboto", sans-serif;
+	outline: 0;
+	background: #f2f2f2;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+.form #login {
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: lightskyblue;
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.form .message {
+	margin: 15px 0 0;
+	color: #b3b3b3;
+	font-size: 12px;
+}
+
+/*
+**  PRODUCTS IN PICTURE
+*/
+
+ /* Three image containers (use 25% for four, and 50% for two, etc) */
+ .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  /*
+  ** SLIDESHOW
+  */
+  
+/* Slideshow container */
+.slideshow-container {
+    width: 30w;
+    height : 20vh;
+    position: absolute;
+  }
+.img_index {
+    width:100%;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  top: 50%;
+  width: auto;
+  color: black;
+  font-weight: bold;
+  font-size: 50px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.prev {
+    position: absolute;
+    margin-top:10vh;
+    margin-left: 20vw;
+} 
+.next {
+    position: absolute;
+    margin-top:10vh;
+    margin-left: 45vw;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(223, 217, 217, 0.8);
+}
+
+.text {
+  color: black;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  margin-top:10vh;
+  margin-right:15vw;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: black;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin-top:30vh;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.form_carousel {
+    width:4vw;
+}
+
+.img_index {
+    margin-top:10vh;
+    margin-left: 25vw;
+    height: 30vh;
+    width: 20vw;
+}
+.article {
+    position: absolute;
+    font-size:3vh;
+    margin-top:6vh;
+    margin-left:30vw;
+}
+
+
+/*
+** FORM picture STYLE
+  */
+.form-pict {
+    text-align:center;
+    margin-left:25vw;
+  }
+
+.form-pict input {
+	font-family: "Roboto", sans-serif;
+	outline: 0;
+	background: rgb(214, 213, 213);
+	width: 15vw;
+	border: 0;
+	padding: 15px;
+	box-sizing: border-box;
+    font-size: 14px;
+    margin-right:35vw;
+}
+.form #pict {
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: lightskyblue;
+	width: 15vw;
+	border: 0;
+    padding: 15px;
+    margin-right:30vw;
+	color: #FFFFFF;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.form .message {
+	margin: 15px 0 0;
+	color: #b3b3b3;
+	font-size: 12px;
+}
+
+
+#welcome{
+    font-size:3vh;
+    text-align:center;
+}

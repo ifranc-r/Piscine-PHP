@@ -10,10 +10,10 @@ function log_in_se($login, $passwd){
 		$user = array("login"=>$login, "passwd"=>hash("whirlpool", $passwd));
 		session_start();
 		$_SESSION["loggued_on_user"] = $user;
-		// print_r($_SESSION);
-		die ("OK\n");
+		echo ("OK\n");
 	}
-	die ("ERROR\n");
+	else
+		echo ("ERROR\n");
 }
 
 function main(){
