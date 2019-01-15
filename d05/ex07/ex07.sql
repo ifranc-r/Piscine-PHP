@@ -1,4 +1,4 @@
 SELECT title, summary FROM film
-WHERE summary like '%42%' 
-or title like '%42%'
-ORDER BY duration;
+WHERE summary LIKE '%42%' 
+OR title LIKE '%42%'
+ORDER BY duration ASC;
