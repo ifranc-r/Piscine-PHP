@@ -1,4 +1,3 @@
-#!/usr/bin/php
 <?php
 
 Class Color {
@@ -48,10 +47,6 @@ Class Color {
 
 	function mult($f){
 		return new Color (array('red' => $this->red * $f, 'green' => $this->green * $f, 'blue' => $this->blue * $f));
-	}
-
-	function __clone(){
-		return;
 	}
 }
 

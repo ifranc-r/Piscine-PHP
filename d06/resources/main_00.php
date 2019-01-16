@@ -1,4 +1,3 @@
-#!/usr/bin/php
 <?php
 
 require_once '../ex00/Color.class.php';
