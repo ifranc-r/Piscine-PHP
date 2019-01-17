@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript</title>
+	<style type="text/css">
+	#balloon{
+		width: 200px;
+		height: 200px;
+		background-color: red;
+		border-radius: 200px;
+	}
+</style>
+</head>
+<body>
+	<div id="balloon" onclick="bigger()" ></div>
+	<script type="text/javascript">
+		var colors = (function () {
+			var counter = [ "red", "blue", "green"];
+			return function() {
+				init: function() {
+					counter = [ "red", "blue", "green"];
+				},
+				next_color: function() {
+					last_key = counter.pop();
+					counter.splice(0,0, last_key);
+					return counter;
+				}
+			};
+		})();
+
+		function bigger(){
+			var bal = document.getElementById("balloon");
+			console.log(bal.offsetHeight);
+			if (bal.offsetHeight < 420){
+				bal.style.width = bal.offsetWidth + 10 + "px";
+				bal.style.height =  bal.offsetHeight + 10 + "px";
+				// console.log(colors()[0]);
+				bal.style.backgroundColor = colors.next_color()[0];
+			}
+			else{
+				colors.init()
+				bal.style.width = "200px";
+				bal.style.height = "200px";
+				bal.style.backgroundColor = "red";
+				colors_obj.a([ "red", "blue", "green"]);
+			}
+		}
+	</script>
+</body>
+</html>
