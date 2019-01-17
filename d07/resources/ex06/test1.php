@@ -56,7 +56,6 @@ $requested_fighters = Array(
 	"foot soldier",
 	"archer",
 );
-
 $actual_fighters = Array(
 );
 

@@ -1,9 +1,14 @@
 <?php
-class NightsWatch{
+class NightsWatch implements IFighter{
+	private $fighters = [];
 	function recruit($a){
-		if (array_key_exists("IFighter",class_implements($a)))
-			$a->fight();
+		$this->fighters[] = $a;
 	}
-	function fight() {}
+	function fight() {
+		foreach ($this->fighters as $fighters) {
+			if ($fighters instanceof IFighter)
+				$fighters->fight();
+		}
+	}
 } 
 ?>
