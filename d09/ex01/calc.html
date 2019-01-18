@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript</title>
+	<style type="text/css">
+	body {
+		background-color: #0F3046;
+		font-family: "Georgia", Times, monospace;
+
+	}
+	h2{
+		color: #D5562B;
+		text-align: center;
+		font-size: 60px;
+		position: fixed;
+		left: 35%;
+		top: 25%; 
+		margin:10px;
+	}
+	#div-calc{
+		position: fixed;
+		left: 30%;
+		top: 40%; 
+		width: 100%;
+		float: left;
+		margin: 10px;
+	}
+	input, select{
+		border: none;
+		height: 50px;
+		font-size: 25px;
+	}
+	input{
+		width: 10%;
+		color: #156172;
+		height: 50px;
+
+	}
+	input[type=text] {
+
+		/*width: 10%;*/
+		background-color: #D6C5A3;
+	}
+	select{
+		/*padding: 16px 20px;*/
+		width: 5%;
+		height: 50px;
+		font-size: 25px;
+
+		background-color: #D2CC5C;
+
+	}
+	input[type=submit]{
+		color: white;
+		height: 50px;
+
+		background-color: #5EA863;
+	}
+</style>
+</head>
+<body>
+	<h2>42Calculator</h2>
+	<div id="div-calc">
+		<input type="text" name="member1" id="num1">
+		<select id="operator">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+
+		</select>
+		<input type="text" name="member2" id="num2">
+		<input type="submit" id="submit" name="" value="Try me!" onclick="calculate()">
+	</div>
+	<script type="text/javascript">
+
+		timer = window.setInterval("timee()",30000);
+		function timee(){
+			alert("Please, use me...");
+		}
+		function is_numeric(str){
+			return /^\d+$/.test(str);
+		}
+		function calculate(){
+			var operator = document.getElementById("operator").value;
+			var num1 = document.getElementById("num1");
+			var num2 = document.getElementById("num2");
+			if (is_numeric(num1.value) && is_numeric(num2.value)){
+				num1_int = Number(num1.value);
+				num2_int = Number(num2.value);
+				if ((num1_int != 0 || num2_int != 0) && (operator != "/" || operator != "%")){
+					switch(operator){
+						case "+":
+						result = num1_int+num2_int;
+						break;
+						case "-":
+						result = num1_int-num2_int;
+						break;
+						case "*":
+						result = num1_int*num2_int;
+						break;
+						case "/":
+						result = num1_int/num2_int;
+						break;
+						case "%":
+						result = num1_int%num2_int;
+						break;
+					}
+					console.log(result);
+					alert(result);
+				}
+				else{
+					console.log("It’s over 9000!");
+					alert("It’s over 9000!");
+				}
+			}
+			else{
+				alert("Error :(");
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

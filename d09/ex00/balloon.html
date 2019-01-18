@@ -12,25 +12,60 @@
 </style>
 </head>
 <body>
-	<div id="balloon" onclick="bigger()" ></div>
+	<div id="balloon" onclick="bigger()" onmouseout="bal_mouse_out(this)" ></div>
 	<script type="text/javascript">
-		var colors = [ "red", "blue", "green"];
+		var colors_Seq = (function sequenceIIFE() {
+			var initial_val = [ "red", "blue", "green"];
+			var current = [ "red", "blue", "green"];
+
+			return {
+				initCurrentValue: function() {
+					 current = initial_val;
+				},
+
+				getCurrentValue: function() {
+					return current;
+				},
+
+				movFowardValue: function() {
+					tmp = current.pop();
+					current.splice(0, 0, tmp);
+					return current;
+				},
+				movBackwardValue: function() {
+					tmp = current.shift();
+					console.log(tmp);
+					console.log(current);
+
+					current.push(tmp);
+					return current;
+				}
+			};
+
+		}());
 		var index_color = 0;
 		function bigger(){
 			var bal = document.getElementById("balloon");
-			console.log(bal.offsetHeight);
 			if (bal.offsetHeight < 420){
 				bal.style.width = bal.offsetWidth + 10 + "px";
 				bal.style.height =  bal.offsetHeight + 10 + "px";
-				// console.log(colors()[0]);
-				++index_color;
-				bal.style.backgroundColor = colors[index_color % 3];
+				colors = colors_Seq.movFowardValue()[0];
+				bal.style.backgroundColor = colors;
 			}
 			else{
-				index_color = 0
 				bal.style.width = "200px";
 				bal.style.height = "200px";
+				colors_Seq.initCurrentValue();
+				colors = colors_Seq.getCurrentValue();
 				bal.style.backgroundColor = "red";
+			}
+		}
+		function bal_mouse_out(elem){
+			if (elem.offsetHeight > 200){
+				elem.style.width = elem.offsetWidth - 5 + "px";
+				elem.style.height =  elem.offsetHeight - 5 + "px";
+				colors = colors_Seq.movBackwardValue()[0]
+				elem.style.backgroundColor = colors;
 			}
 		}
 	</script>
