@@ -71,70 +71,51 @@
 
 		</select>
 		<input type="text" name="member2" id="num2">
-		<input type="submit" id="submit" name="" value="Try me!" onclick="calculate()">
+		<input type="submit" id="submit" name="" value="Try me!">
 	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript">
-
-		timer = window.setInterval("timee()",30000);
-		function timee(){
-			alert("Please, use me...");
-		}
 		function is_numeric(str){
 			return /^\d+$/.test(str);
 		}
-		function calculate(){
-			var operator = document.getElementById("operator").value;
-			var num1 = document.getElementById("num1");
-			var num2 = document.getElementById("num2");
-			if (is_numeric(num1.value) && is_numeric(num2.value)){
-				num1_int = Number(num1.value);
-				num2_int = Number(num2.value);
-				if ((num1_int == 0 || num2_int == 0) && (operator == "/" || operator == "%")){
-					console.log("It’s over 9000!");
-					alert("It’s over 9000!");
+		$(document).ready(function(){
+			$("#submit").click(function(){
+				if (is_numeric($("#num1").val()) && is_numeric($("#num2").val())){
+					num1_int = Number($("#num1").val());
+					num2_int = Number($("#num2").val());
+					if ((num1_int == 0 || num2_int == 0) && ($("#operator").val() == "/" || $("#operator").val() == "%")){
+						console.log("It’s over 9000!");
+						alert("It’s over 9000!");
+					}else{
+						switch($("#operator").val()){
+							case "+":
+							result = num1_int+num2_int;
+							break;
+							case "-":
+							result = num1_int-num2_int;
+							break;
+							case "*":
+							result = num1_int*num2_int;
+							break;
+							case "/":
+							result = num1_int/num2_int;
+							break;
+							case "%":
+							result = num1_int%num2_int;
+							break;
+						}
+						console.log(result);
+						alert(result);
+					}
 				}
 				else{
-					switch(operator){
-						case "+":
-						result = num1_int+num2_int;
-						break;
-						case "-":
-						result = num1_int-num2_int;
-						break;
-						case "*":
-						result = num1_int*num2_int;
-						break;
-						case "/":
-						result = num1_int/num2_int;
-						break;
-						case "%":
-						result = num1_int%num2_int;
-						break;
-					}
-					console.log(result);
-					alert(result);
+					alert("Error :(");
 				}
-			}
-			else{
-				alert("Error :(");
-			}
-		}
+			});
+		});
 	</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

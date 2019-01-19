@@ -27,7 +27,7 @@ function add2list_ev(){
 }
 
 function add2list(to_add){
-	if (to_add != ''){
+	if (/^\s*$/.test(to_add) != true){
 		var li = document.createElement("li");
 		li.innerHTML = to_add;
 		li.addEventListener("click", delet_li);

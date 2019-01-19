@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript</title>
+	<style type="text/css">
+	#balloon{
+		width: 200px;
+		height: 200px;
+		background-color: red;
+		border-radius: 200px;
+	}
+</style>
+</head>
+<body>
+	<div id="balloon" ></div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var colors_Seq = (function sequenceIIFE() {
+			var initial_val = [ "red", "blue", "green"];
+			var current = [ "red", "blue", "green"];
+
+			return {
+				initCurrentValue: function() {
+					current = initial_val;
+				},
+
+				getCurrentValue: function() {
+					return current;
+				},
+
+				movFowardValue: function() {
+					tmp = current.pop();
+					current.splice(0, 0, tmp);
+					return current;
+				},
+				movBackwardValue: function() {
+					tmp = current.shift();
+					console.log(tmp);
+					console.log(current);
+
+					current.push(tmp);
+					return current;
+				}
+			};
+
+		}());
+		$(document).ready(function(){
+			$("#balloon").click(function(){
+				if ($(this).height() < 420){
+					sizeh = $(this).height() + 10;
+					sizew = $(this).width() + 10;
+					$(this).height(sizeh);
+					$(this).width(sizew);
+					colors = colors_Seq.movFowardValue()[0];
+					$(this).css("background-color", colors);
+				}else{
+					$(this).height(200);
+					$(this).width(200);
+					colors_Seq.initCurrentValue();
+					$(this).css("background-color", "red");
+				}
+			});
+			$("#balloon").mouseout(function(){
+				if ($(this).height() > 200){
+					sizeh = $(this).height() - 5;
+					sizew = $(this).width() - 5;
+					$(this).height(sizeh);
+					$(this).width(sizew);
+					colors = colors_Seq.movBackwardValue()[0];
+					$(this).css("background-color", colors);
+				}
+			});
+		});
+	</script>
+</body>
+</html>
