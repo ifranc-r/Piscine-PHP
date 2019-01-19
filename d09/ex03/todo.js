@@ -1,31 +1,42 @@
 
-$(window).on("unload", function (e) {
-	var newCookie =$.map($("#ft_list").children(), $.text).reverse();
-	if (newCookie != 0)
-		document.cookie = JSON.stringify(newCookie);
-})
-$(window).on("load", function (e) {
-	var tmp = document.cookie;
-	if (tmp) {
-		cookie = JSON.parse(tmp);
-		cookie.forEach(function (el) {
-			add2list(el);
-		});
-	}
-})
 
 $(document).ready(function() {
-
+	ajax_function("GET", "select.php", load_todo);
 	$("#button").click(function(){
 		var to_add = prompt("Please enter your new line:");
-		add2list(to_add);
+		if (/^\s*$/.test(to_add) != true){
+			ajax_function("GET", "insert.php?toadd="+to_add, insert);
+			$("#ft_list").empty();
+			ajax_function("GET", "select.php", load_todo);
+		}
 	});
+
 });
 
-function add2list(to_add){
-	if (/^\s*$/.test(to_add) != true){
-		li = $("<li></li>").text(to_add);
-		$(li).click(function(){$(this).remove();});
-		$("#ft_list").prepend(li);
-	}
+function load_todo(data){
+	array_todo = JSON.parse(data);
+	$.each(array_todo, function(id, val){
+		add2list(val, id);
+	});
+}
+function insert(val){
+	console.log(val);
+}
+
+function ajax_function(method, url, succes_f){
+	$.ajax({
+		method: method,
+		url: url,
+		data: null,
+	})
+	.done(function(data) {
+		succes_f(data);
+	});
+}
+
+function add2list(to_add, id){
+	li = $("<li></li>").text(to_add);
+	li.attr("id", id);
+	$(li).click(function(){$(this).remove();});
+	$("#ft_list").prepend(li);
 }

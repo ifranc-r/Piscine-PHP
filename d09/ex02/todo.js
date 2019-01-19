@@ -18,6 +18,8 @@ window.onunload = function () {
 		newCookie.unshift(todo[i].innerHTML);
 	if (newCookie.length != 0)
 		document.cookie = JSON.stringify(newCookie);
+	else
+		document.cookie = "";
 };
 
 
