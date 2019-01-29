@@ -1,4 +1,4 @@
-<?php
+c<?php
 
 function check_usr_exist($array_all_usr, $usr){
 	foreach ($array_all_usr as $num_usr => $array_usr) {
